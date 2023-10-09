@@ -1,0 +1,646 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700&family=Libre+Baskerville&family=Poller+One&family=Poppins&display=swap"
+        rel="stylesheet">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        .navExtL {
+            /* -webkit-clip-path: polygon(15% 0, 85% 0, 70% 100%, 30% 100%);
+      clip-path: polygon(15% 0, 85% 0, 70% 100%, 30% 100%); */
+            transform: skew(30deg);
+            -webkit-transform: skew(30deg);
+            -moz-transform: skew(30deg);
+            position: relative;
+            left: 30px;
+            border-bottom-left-radius: 5px;
+
+        }
+
+        .navExtR {
+            /* -webkit-clip-path: polygon(15% 0, 85% 0, 70% 100%, 30% 100%);
+      clip-path: polygon(15% 0, 85% 0, 70% 100%, 30% 100%); */
+            transform: skew(-30deg);
+            -webkit-transform: skew(-30deg);
+            -moz-transform: skew(-30deg);
+            position: relative;
+            right: 30px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .shads {
+            text-shadow: -1px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+
+
+
+        .visionText {
+            background: #F0F0F0;
+            background: linear-gradient(to bottom, #F0F0F0 0%, #404040 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #26B2FF;
+            font-size: 70px;
+            
+        }
+
+        .visionFlex {
+            font-size: 120px;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #ffffff;
+            -webkit-text-fill-color: #242323;
+            font-family: 'Epilogue', sans-serif;
+        }
+
+        .visionFlexSmaller {
+            font-size: 90px;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #ffffff;
+            -webkit-text-fill-color: #242323;
+            font-family: 'Epilogue', sans-serif;
+        }
+
+        .visionFlex2 {
+            font-size: 120px;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #ffffff;
+            -webkit-text-fill-color: white;
+            font-family: 'Epilogue', sans-serif;
+        }
+
+        .visionFlex2Smaller {
+            font-size: 90px;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #ffffff;
+            -webkit-text-fill-color: white;
+            font-family: 'Epilogue', sans-serif;
+        }
+
+        .servicesText {
+            font-size: 218px;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #ffffff;
+            -webkit-text-fill-color: #2c2c2e;
+            font-family: 'Poller One', cursive;
+        }
+
+        .whyChooseText {
+            font-size: 70px;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #ffffff;
+            -webkit-text-fill-color: #242323;
+            font-family: 'Poller One', cursive;
+        }
+
+        .whyChooseText2 {
+            font-size: 70px;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #ffffff;
+            -webkit-text-fill-color: white;
+            font-family: 'Poller One', cursive;
+        }
+
+
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 580px;
+            height: 520px;
+        }
+
+        /* Style for Swiper pagination (initially hidden) */
+        .swiper-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            /* Adjust the spacing between pagination items */
+            margin-top: 20px;
+            /* Adjust the top margin as needed */
+            opacity: 0;
+            /* Initially hidden */
+            transition: opacity 0.2s;
+            /* Smooth transition for opacity */
+        }
+
+        /* Style for individual pagination bullets */
+        .swiper-pagination-bullet {
+            width: 10px;
+            /* Bullet width */
+            height: 10px;
+            /* Bullet height */
+            background: #007BFF;
+            /* Bullet color */
+            border-radius: 50%;
+            /* Make bullets circular */
+            cursor: pointer;
+            /* Add a pointer cursor for hover effect */
+            transition: background 0.2s;
+            /* Smooth transition on hover */
+        }
+
+        /* Hover effect for pagination bullets */
+        .swiper-pagination-bullet:hover {
+            background: #4CAF50;
+            /* Change bullet color on hover */
+        }
+
+        /* Show pagination on hover */
+        .swiper:hover .swiper-pagination {
+            opacity: 1;
+        }
+
+
+        .hero_bottom{
+            position: absolute;
+            left: 50%;
+            /* transform: translateX(-50%); */
+            transform: translateX(-50%);
+            bottom: -15%;
+        }
+
+        .content p{
+            font-family: Libre Baskerville;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            color: white;
+        }
+
+        .contentTwo p{
+            color: var(--Shade-color, #F4F5FA);
+            font-family: Libre Baskerville;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 67.2px;
+        }
+
+        .Cardheader{
+            color: white;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+        .our-expart{
+            background-repeat: no-repeat;
+            background-position: center ;
+        }
+
+        .team .swiper-slide{
+            height: auto!important;
+
+        }
+
+        .expertHeader h2{
+            font-size: 70px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-transform: uppercase;
+            color: var(--White, #FFF);
+        }
+
+        .rightCotainer h2{
+            text-transform: uppercase;
+            font-size: 40px;
+        }
+
+        .leftContainer{
+          margin-top: -200px;
+        }
+        .service_area{
+            position: relative;
+        }
+        .service_computer{
+            position: absolute;
+            left: 41%;
+            transform: translateX(-60%);
+            bottom: 0%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- header section start -->
+
+    <header class="bg-charlGr">
+        <section class="h-[1000px] relative">
+            <nav class="relative top-0 left-0 z-10">
+                <div class="grid grid-cols-12 bg-outSpace pt-3 pb-2 px-4">
+                    <div class="col-span-3">
+                        <div class=" flex gap-2 justify-between items-center">
+                            <div class="">
+                                <a href="index.html">
+                                    <img src="./img/Logo.png" alt="" class="align-baseline">
+                                  </a>
+                            </div>
+                            <div class="">
+                                <h4 class="text-white font-libre font-normal text-base">
+                                    <iconify-icon icon="tdesign:call-1" style="color: white;"></iconify-icon> Call Us
+                                </h4>
+                                <p class="text-white font-libre font-bold text-lg">
+                                    +880 9638 416 566
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-6">
+                        <div class="font-libre text-white text-center items-center mt-5">
+                            Check out our <a href="#" class="underline">Case Study</a> together
+                        </div>
+                        
+                    </div>
+                    <div class="col-span-3">
+                        <div class=" flex gap-2 justify-between items-center">
+                            <div class="">
+                                <h4 class="text-white font-libre font-normal text-base">
+                                    <iconify-icon icon="system-uicons:mail" style="color: white;"></iconify-icon> Mail
+                                    Us
+                                </h4>
+                                <p class="text-white font-libre font-bold text-lg">
+                                    example@gmail.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="flex justify-center">
+                        <div class="bg-outSpace w-1/12 h-[60px] navExtL"></div>
+                        <div class=" bg-outSpace w-2/4 h-[60px]">
+                            <div class="">
+                                <ul class="flex justify-center gap-8 items-center">
+                                    <li class="font-libre text-white text-lg font-bold p-4 navHover"><a href="about.html">About</a></li>
+                                    <li class="font-libre text-white text-lg font-bold p-4 navHover">Solutions</li>
+                                    <li class="font-libre text-white text-lg font-bold p-4 navHover">Process</li>
+                                    <li class="font-libre text-white text-lg font-bold p-4 navHover">Contact</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-outSpace w-1/12 h-[60px] navExtR"></div>
+                    </div>
+
+                </div>
+
+                </div>
+            </nav>
+            <!-- NavBar Ends -->
+            <div class="absolute top-16 left-0">
+                <div class="relative top-0 left-0">
+                    <div class="grid grid-cols-12">
+                        <div class="col-span-1">
+                            <div class="-rotate-90 flex flex-row-reverse justify-start translate-y-48">
+                                <div class="">
+                                    <h3 class="font-popp font-medium text-2xl  text-white w-[300px]">
+                                        Follow Us
+                                    </h3>
+                                </div>
+                                <div class="translate-y-4 mx-3">
+                                    <div class="w-[150px] bg-green-50 h-[1px]"></div>
+                                </div>
+                                <div class="rotate-90 text-4xl mr-6"><a href=""><iconify-icon icon="iconoir:facebook"
+                                            style="color: white;"></iconify-icon></a></div>
+                                <div class="rotate-90 text-3xl mr-6"><a href=""><iconify-icon icon="lucide:twitter"
+                                            style="color: white;"></iconify-icon></a></div>
+                                <div class="rotate-90 text-3xl mr-6"><a href=""><iconify-icon icon="lucide:linkedin"
+                                            style="color: white;"></iconify-icon></a></div>
+                                <div class="rotate-90 text-4xl mr-6"><a href=""><iconify-icon icon="mdi:instagram"
+                                            style="color: white;"></iconify-icon></a></div>
+                            </div>
+                        </div>
+                        <div class="col-span-5 relative top-0 left-0">
+
+                        </div>
+                        <div class="col-span-6 bg-white h-[936px]">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute hero_bottom">
+                <div class=''></div>
+                <img src="./img/hu.png" class="w-full">
+            </div>
+
+
+
+        </section>
+    </header>
+
+        <section>
+            <div class="bg-black pt-[386px]">
+                <div class="container mx-auto">
+                    <div class="grid  grid-cols-2 gap-20">
+                        <div class="image">
+                            <img src="./img/aboutImage.png" />
+                            <div class="content">
+                                <p class="mt-6">We are a versatile digital company dedicated to transforming businesses through cutting-edge
+                                    Web Development,Software Development, Application Development, Video and animation Production,
+                                    Digital Marketing, Marketing Consulting, and Graphic Design services. </p>
+                                    <p class="mt-4">We are a versatile digital company dedicated to transforming businesses through cutting-edge
+                                    Web Development,Software Development, Application Development, Video and animation Production,
+                                    Digital Marketing, Marketing Consulting, and Graphic Design services. </p>
+                            </div>
+                        </div>
+                        <div class="contentTwo">
+                            <h2 class="visionText text-2xl">Overview</h2>
+                            <p class="mt-16">Our visionary clients partner with us because of our deep understanding of the essential role of visual identity, UX and digital in business.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-black pt-[186px]">
+            <div class="container mx-auto">
+                <div class=" h-[700px] grid grid-cols-3 gap-10">
+                   <div class="  flex flex-row items-center">
+                        <div class="">
+                            <div class="firstCard">
+                                <h2 class="Cardheader">Brands</h2>
+                                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                                    <img class="w-full" src="./img/brand.jpeg" alt="Sunset in the mountains">
+                                    <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+                                    <p class="text-white text-base">
+                                        Brand building is the process of creating and enhancing the identity, reputation, and value of a product, service, or organization in the minds of consumers. It involves developing a distinctive name, logo, design, slogan, and personality that reflect the core values and benefits of the brand.
+                                    </p>
+                                    </div>
+                                    <div class="px-6 pt-4 pb-2">
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Learn More</span>
+                                   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                   <div class=" flex flex-row items-start">
+                    <div class="">
+                        <div class="secondCard">
+                            <h2 class="Cardheader">Digital Marketing</h2>
+                            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                                <img class="w-full" src="./img/digitalMarketing.jpeg" alt="Sunset in the mountains">
+                                <div class="px-6 py-4">
+                                <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+                                <p class="text-white text-base">
+                                    Digital marketing is a form of marketing that uses the internet and digital technologies, such as computers and smartphones, to connect with customers. It includes various methods, such as search engine optimization, social media marketing, email marketing, and online advertising,
+                                </p>
+                                </div>
+                                <div class="px-6 pt-4 pb-2">
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Learn More</span>
+                               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+
+               <div class="flex flex-row  items-end">
+                <div class="">
+                    <div class="thirdCard">
+                        <h2 class="Cardheader">Web Experiences</h2>
+                        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                            <img class="w-full" src="./img/webExperiences.jpeg" alt="Sunset in the mountains">
+                            <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+                            <p class="text-base text-white">
+                                Web experiences can influence user satisfaction, engagement, loyalty, and conversion. Creating positive web experiences requires understanding the needs, preferences, and behaviors of the users, as well as the goals and capabilities of the web providers.
+                            </p>
+                            </div>
+                            <div class="px-6 pt-4 pb-2">
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Learn More</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+                      
+                    
+                   
+                   </div>
+                    
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+
+        <section class="bg-black pt-[250px]">
+            <div class="container mx-auto">
+                <div class="expertHeader">
+                    <h2 class="text-center font-bold">Our Expert Team</h2>
+                </div>
+                <div class=" our-expart" style="background-image: url('./img/pngwing.png');">
+                <div class=" pb-[155px]">
+                    
+                    <div class="swiper team">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class=" w-[270px] h-[270px]">
+                                <img class=" rounded-full" src="./img/team1.png" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class=" w-[270px] h-[270px]">
+                                <img class=" rounded-full" src="./img/team3.png" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class=" w-[270px] h-[270px]">
+                                <img class=" rounded-full" src="./img/team3.png" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class=" w-[270px] h-[270px]">
+                                <img class=" rounded-full" src="./img/team1.png" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class=" w-[270px] h-[270px]">
+                                <img class=" rounded-full" src="./img/team3.png" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class=" w-[270px] h-[270px]">
+                                <img class=" rounded-full" src="./img/team3.png" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class=" w-[270px] h-[270px]">
+                                <img class=" rounded-full" src="./img/team1.png" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class=" w-[270px] h-[270px]">
+                                <img class=" rounded-full" src="./img/team3.png" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class=" w-[270px] h-[270px]">
+                                <img class=" rounded-full" src="./img/team3.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+                     
+                    </div>
+                
+                </div>
+                
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-black  py-20 service_area" style="background-image: url('./img/watter.png');">
+            <div class="container mx-auto">
+                <div class="grid  grid-cols-2 gap-20">
+                    <div class="">
+                        <h2 class="text-white text-5xl font-bold">NEXWIFT SOLUTIONS</h2>
+                        
+                    <div class=" mt-11">
+                        <p class="text-white  text-3xl">we think beyond any single interaction or point of sale. We merge expertise in how users enjoy using the web with strategic creativity to deliver one-of-a-kind experiences.</p>
+                    </div>
+                    </div>
+
+                    <div class="leftContainer bg-[#2C2C2E] pt-[200px] px-[30px] pb-20">
+                        <h2 class="text-white  text-2xl font-bold">Technology we use</h2>
+                        <p class="text-base text-white mt-8">we think beyond any single interaction or point of sale. We merge expertise in how users enjoy using the web with strategic creativity to deliver one-of-a-kind experiences.</p>
+
+                        <div class=" mt-6 service_box ">
+                            <div class=" flex gap-2 items-center mb-2">
+                                <div class=" mt-2">
+                                    <p class=" text-xl text-white"><iconify-icon icon="lucide:box"></iconify-icon></p>
+                                </div>
+                                <div class="">
+                                    <p class="text-base text-white">Professional Services</p>
+                                </div>
+                            </div>
+                            <div class=" flex gap-2 items-center mb-2">
+                                <div class=" mt-2">
+                                    <p class=" text-xl text-white"><iconify-icon icon="lucide:box"></iconify-icon></p>
+                                </div>
+                                <div class="">
+                                    <p class="text-base text-white">Visual Display Products</p>
+                                </div>
+                            </div>
+                            <div class=" flex gap-2 items-center mb-2">
+                                <div class=" mt-2">
+                                    <p class=" text-xl text-white"><iconify-icon icon="lucide:box"></iconify-icon></p>
+                                </div>
+                                <div class="">
+                                    <p class="text-base text-white">Computer Software</p>
+                                </div>
+                            </div>
+                            <div class=" flex gap-2 items-center mb-2">
+                                <div class=" mt-2">
+                                    <p class=" text-xl text-white"><iconify-icon icon="lucide:box"></iconify-icon></p>
+                                </div>
+                                <div class="">
+                                    <p class="text-base text-white">Complete E-commerce Solutions</p>
+                                </div>
+                            </div>
+                            <div class=" flex gap-2 items-center mb-2">
+                                <div class=" mt-2">
+                                    <p class=" text-xl text-white"><iconify-icon icon="lucide:box"></iconify-icon></p>
+                                </div>
+                                <div class="">
+                                    <p class="text-base text-white">Financial Services</p>
+                                </div>
+                            </div>
+                            <div class=" flex gap-2 items-center mb-2">
+                                <div class=" mt-2">
+                                    <p class=" text-xl text-white"><iconify-icon icon="lucide:box"></iconify-icon></p>
+                                </div>
+                                <div class="">
+                                    <p class="text-base text-white">CRM Project </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" mt-10">
+                            <div class="grid grid-cols-4 gap-10">
+                                <div class="">
+                                    <img src="./img/Mongo.png" alt="">
+                                </div>
+                                <div class="">
+                                    <img src="./img/React.png" alt="">
+                                </div>
+                                <div class="">
+                                    <img src="./img/Next.png" alt="">
+                                </div>
+                                  <div class="">
+                                    <img src="./img/JS.png" alt="">
+                                </div>
+                               
+                                <div class="">
+                                    <img src="./img/MYSQL.png" alt="">
+                                </div>
+                                <div class="">
+                                    <img src="./img/Laravel.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            
+            </div>
+            <div class="service_computer">
+                <img src="./img/computer.png" alt="">
+              </div>
+        </section>
+
+    
+    <!-- header section ends -->
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>   
+       var swiper = new Swiper(".team", {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        loop:true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            });
+
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            offset: 280,
+        });
+    </script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+
+</html>
